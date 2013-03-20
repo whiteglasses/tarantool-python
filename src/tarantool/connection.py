@@ -105,6 +105,7 @@ class Connection(object):
         # Unpack body if it is not empty (i.e. not PING)
         if body_length != 0:
             buff_body = ctypes.create_string_buffer(body_length)
+            time.sleep(3)
             nbytes = self._socket.recv_into(buff_body)
             # Immediately raises an exception if the data cannot be read
             if nbytes != body_length:
